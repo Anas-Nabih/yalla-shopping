@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yalla_shopping/presentation/res/app_theme.dart';
+import 'package:yalla_shopping/presentation/res/routes.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -20,6 +21,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.splashRoute,
       theme: appTheme(),
     );
   }

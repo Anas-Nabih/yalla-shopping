@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yalla_shopping/presentation/main/main_view.dart';
+import 'package:yalla_shopping/presentation/onboarding/onboarding_view.dart';
 import 'package:yalla_shopping/presentation/splash/splash_view.dart';
 import 'package:yalla_shopping/presentation/store_details/store_details_view.dart';
 import 'package:yalla_shopping/presentation/user/forget_password/forget_password_view.dart';
@@ -9,6 +10,7 @@ import 'package:yalla_shopping/presentation/user/register/register_view.dart';
 
 class Routes{
   static const String splashRoute = "/";
+  static const String onBoardingView= "/onBoardingView";
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
   static const String forgetPasswordRoute = "/forgetPassword";
@@ -23,6 +25,8 @@ class RouteGenerator{
         return CupertinoPageRoute(builder: (context) => const SplashView(),);
       case Routes.loginRoute:
         return CupertinoPageRoute(builder: (context) => const LoginView(),);
+        case Routes.onBoardingView:
+        return CupertinoPageRoute(builder: (context) => const OnBoardingView(),);
       case Routes.registerRoute:
         return CupertinoPageRoute(builder: (context) => const RegisterView(),);
       case Routes.forgetPasswordRoute:

@@ -50,10 +50,10 @@ ThemeData appTheme() {
     /// text theme
     textTheme: TextTheme(
       displayLarge: getLightStyle(color: MColors.white,fontSize: FontsSize.s22),
-      headline1: getSemiBoldStyle(color: MColors.darkGray,fontSize: FontsSize.s16),
-      subtitle1: getMediumStyle(color: MColors.lightGray,fontSize: FontsSize.s14),
-      caption: getRegularStyle(color: MColors.grey1),
-      bodyText1: getRegularStyle(color: MColors.grey)
+      headlineLarge: getSemiBoldStyle(color: MColors.darkGray,fontSize: FontsSize.s16),
+      titleMedium: getMediumStyle(color: MColors.lightGray,fontSize: FontsSize.s14),
+      bodyLarge: getRegularStyle(color: MColors.grey1),
+      bodySmall: getRegularStyle(color: MColors.grey)
     ),
 
     /// inputDecoration theme
