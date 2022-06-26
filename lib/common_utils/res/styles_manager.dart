@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/cupertino.dart';
-import 'package:yalla_shopping/presentation/res/fonts.dart';
+import 'package:yalla_shopping/common_utils/res/fonts.dart';
 
 TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color){
   return TextStyle(

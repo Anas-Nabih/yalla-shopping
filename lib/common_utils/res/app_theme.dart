@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:yalla_shopping/presentation/res/colors.dart';
-import 'package:yalla_shopping/presentation/res/fonts.dart';
-import 'package:yalla_shopping/presentation/res/styles_manager.dart';
-import 'package:yalla_shopping/presentation/res/values_manager.dart';
+import 'package:yalla_shopping/common_utils/res/colors.dart';
+import 'package:yalla_shopping/common_utils/res/fonts.dart';
+import 'package:yalla_shopping/common_utils/res/styles_manager.dart';
+import 'package:yalla_shopping/common_utils/res/values_manager.dart';
 
 ThemeData appTheme() {
   return ThemeData(
@@ -51,6 +51,7 @@ ThemeData appTheme() {
     textTheme: TextTheme(
       displayLarge: getLightStyle(color: MColors.white,fontSize: FontsSize.s22),
       headlineLarge: getSemiBoldStyle(color: MColors.darkGray,fontSize: FontsSize.s16),
+      headlineMedium: getSemiBoldStyle(color: MColors.darkGray,fontSize: FontsSize.s14),
       titleMedium: getMediumStyle(color: MColors.lightGray,fontSize: FontsSize.s14),
       bodyLarge: getRegularStyle(color: MColors.grey1),
       bodySmall: getRegularStyle(color: MColors.grey)

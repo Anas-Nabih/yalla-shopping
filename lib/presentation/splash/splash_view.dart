@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:yalla_shopping/presentation/res/app_constatnts.dart';
-import 'package:yalla_shopping/presentation/res/assets_manager.dart';
-import 'package:yalla_shopping/presentation/res/routes.dart';
+import 'package:yalla_shopping/common_utils/res/app_constatnts.dart';
+import 'package:yalla_shopping/common_utils/res/assets_manager.dart';
+import 'package:yalla_shopping/common_utils/res/routes.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
