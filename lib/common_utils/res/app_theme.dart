@@ -59,25 +59,25 @@ ThemeData appTheme() {
 
     /// inputDecoration theme
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(AppPadding.p8),
+      contentPadding: const EdgeInsets.all(Gaps.m8),
       hintStyle: getRegularStyle(color: MColors.grey,fontSize: FontsSize.s14),
       labelStyle: getMediumStyle(color: MColors.grey,fontSize: FontsSize.s14),
       errorStyle: getRegularStyle(color: MColors.error),
       enabledBorder:  OutlineInputBorder(
         borderSide: const BorderSide(color: MColors.primary,width: FontsSize.s1_5),
-        borderRadius: BorderRadius.circular(AppPadding.p8)
+        borderRadius: BorderRadius.circular(Gaps.m8)
       ),
       focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.grey,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(AppPadding.p8)
+          borderRadius: BorderRadius.circular(Gaps.m8)
       ),
       errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.error,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(AppPadding.p8)
+          borderRadius: BorderRadius.circular(Gaps.m8)
       ),
       focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.primary,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(AppPadding.p8)
+          borderRadius: BorderRadius.circular(Gaps.m8)
       ),
   )
   );

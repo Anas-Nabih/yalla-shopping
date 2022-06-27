@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:yalla_shopping/common_utils/res/app_constatnts.dart';
 import 'package:yalla_shopping/common_utils/res/assets_manager.dart';
 import 'package:yalla_shopping/common_utils/res/colors.dart';
+import 'package:yalla_shopping/presentation/user/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -15,6 +17,14 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   int _currentIndex = 0;
 
+  PageController? _pageController;
+  int _getNextIndex(){
+    int nextIndex = _currentIndex ++;
+    if(nextIndex == OnBoarding.onBoardingList.length){
+      nextIndex =0;
+    }
+    return nextIndex;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +34,13 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           children: [
             Visibility(
               visible: _currentIndex != 0,
-              child: Text("Skip",
-                  style: TextStyle(fontSize: 12.sp, color: Colors.grey)),
+              child: GestureDetector(
+                onTap: ()=>Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => const LoginView(),)),
+                child: Text("Skip",
+                    style: TextStyle(fontSize: 12.sp, color: Colors.grey)),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               children: List.generate(
                 OnBoarding.onBoardingList.length,
@@ -43,12 +56,33 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             GestureDetector(
                 onTap: ()=>setState(() {
                   _currentIndex = _currentIndex +1;
                 }),
-                child: Text("Next", style: TextStyle(fontSize: 12.sp, color: Colors.grey))),
+                child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+
+                      });
+                      _pageController?.jumpToPage(_currentIndex+1);
+                      print("${_currentIndex+1}");
+                      // setState(() {
+                        // _pageController?.animateToPage(3,duration: Duration(milliseconds: 300),curve: Curves.bounceInOut);
+                      // });
+                      // _getNextIndex();
+                      // if(_currentIndex == 3)
+                      // Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => const LoginView(),));
+                      // else
+                      //  setState(() {
+                      //    _currentIndex ++;
+                      //    _pageController?.animateToPage(_getNextIndex() , duration: Duration(milliseconds: 300), curve: Curves.bounceInOut);
+                      //
+                      //  });
+
+                     },
+                    child: Text("Next", style: TextStyle(fontSize: 12.sp, color: Colors.grey)))),
           ],
         ),
       ),
@@ -74,6 +108,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           Container(
               height: 40.h,
               child: PageView.builder(
+                controller: _pageController,
                 itemCount: OnBoarding.onBoardingList.length,
                 itemBuilder: (context, index) =>
                     SvgPicture.asset(OnBoarding.onBoardingList[index].image),
@@ -86,7 +121,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         ],
       ),
     );
+
   }
+
 }
 
 class OnBoarding {

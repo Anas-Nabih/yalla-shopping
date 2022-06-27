@@ -7,8 +7,8 @@ class AppConstants {
   static const String onBoarding3Title = "This is OnBoarding 3 title";
   static const String onBoarding4Title = "This is OnBoarding 4 title";
 
-  static const String onBoarding1Description = " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
-  static const String onBoarding2Description = " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
-  static const String onBoarding3Description = " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
-  static const String onBoarding4Description = " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
+  static const String onBoarding1Description = " 1 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
+  static const String onBoarding2Description = " 2 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
+  static const String onBoarding3Description = " 3 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
+  static const String onBoarding4Description = " 4 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
 }
