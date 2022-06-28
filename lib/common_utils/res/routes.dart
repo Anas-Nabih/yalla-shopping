@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yalla_shopping/presentation/main/main_view.dart';
-import 'package:yalla_shopping/presentation/onboarding/onboarding_view.dart';
+import 'package:yalla_shopping/presentation/onboarding/view/onboarding_view.dart';
 import 'package:yalla_shopping/presentation/splash/splash_view.dart';
 import 'package:yalla_shopping/presentation/store_details/store_details_view.dart';
 import 'package:yalla_shopping/presentation/user/forget_password/forget_password_view.dart';
