@@ -153,3 +153,5 @@ class OnBoarding {
         image: AssetsManager.onBoardingLogo4),
   ];
 }
+
+
