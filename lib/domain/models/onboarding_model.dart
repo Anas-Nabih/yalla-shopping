@@ -1,16 +1,16 @@
-class OnBoarding {
+class SliderObject {
   final String title;
   final String subTitle;
   final String image;
 
-  OnBoarding(
+  SliderObject(
       {required this.title, required this.subTitle, required this.image});
 }
 
 class SliderViewObject{
-  final OnBoarding sliderObj;
+  final SliderObject sliderObj;
   final int numOfSlides;
-  final OnBoarding currentIndex;
+  final SliderObject currentIndex;
 
   const SliderViewObject({required this.sliderObj,required this.currentIndex,required this.numOfSlides});
 }

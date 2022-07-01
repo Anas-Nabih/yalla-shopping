@@ -1,9 +1,12 @@
+import 'dart:async';
+
+import 'package:yalla_shopping/domain/models/onboarding_model.dart';
 import 'package:yalla_shopping/presentation/base/base_view_model.dart';
 
 class OnBoardingViewModel extends BaseViewModel with OnBoardingViewModelInputs, OnBoardingViewModelOutputs{
 
   /// stream controller outputs
-
+  final StreamController _streamController = StreamController<SliderViewObject>();
  /// Onboarding view model inputs
   @override
   void dispose() {
@@ -13,6 +16,7 @@ class OnBoardingViewModel extends BaseViewModel with OnBoardingViewModelInputs, 
   @override
   void start() {
     // TODO: implement start
+    /// call user api
   }
 
   @override
@@ -29,6 +33,14 @@ class OnBoardingViewModel extends BaseViewModel with OnBoardingViewModelInputs, 
   void onPageChange(int index) {
     // TODO: implement onPageChange
   }
+
+  @override
+  // TODO: implement inputSliderViewObject
+  Sink get inputSliderViewObject => throw UnimplementedError();
+
+  @override
+  // TODO: implement outPutSliderViewObject
+  Stream get outPutSliderViewObject => throw UnimplementedError();
 }
 
 
@@ -36,5 +48,10 @@ class OnBoardingViewModel extends BaseViewModel with OnBoardingViewModelInputs, 
   void goNext();
   void goPrevious();
   void onPageChange(int index);
+
+  /// stream controller input
+ Sink get inputSliderViewObject;
  }
-abstract class OnBoardingViewModelOutputs{}
+abstract class OnBoardingViewModelOutputs{
+  Stream get outPutSliderViewObject;
+}
