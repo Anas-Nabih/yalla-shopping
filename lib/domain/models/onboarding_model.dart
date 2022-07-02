@@ -10,7 +10,7 @@ class SliderObject {
 class SliderViewObject{
   final SliderObject sliderObj;
   final int numOfSlides;
-  final SliderObject currentIndex;
+  final int currentIndex;
 
   const SliderViewObject({required this.sliderObj,required this.currentIndex,required this.numOfSlides});
 }

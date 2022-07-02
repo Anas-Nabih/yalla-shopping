@@ -1,4 +1,4 @@
-class AppConstants {
+class Const {
   static const int splashDelay = 3;
 
 
