@@ -8,7 +8,7 @@ part 'app_service_client.g.dart';
 @RestApi(baseUrl: Api.baseUrl)
 abstract class AppServiceClient{
 
-  factory AppServiceClient (Dio dio, {String baseUrl}) = _AppServiceClient;
+    factory AppServiceClient (Dio dio, {String baseUrl}) = _AppServiceClient;
 
   @POST("/customer/login")
   Future<AuthenticationResponse> login(
