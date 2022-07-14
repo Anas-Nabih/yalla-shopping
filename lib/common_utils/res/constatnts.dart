@@ -1,4 +1,7 @@
 class Const {
+
+  static const String EMPTY = "";
+  static const int ZERO = 0;
   static const int splashDelay = 3;
 
 

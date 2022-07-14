@@ -18,7 +18,14 @@ class SliderViewObject{
 
 /// login model
 
-class Authentication {
+
+class Authentication{
+  final Customer? customer;
+
+  Authentication({required this.customer});
+}
+
+class Customer {
    String  id;
    String  name;
    String  email;
@@ -26,5 +33,5 @@ class Authentication {
    String  role;
    int  numOfNotifications;
 
-   Authentication({required this.email,required this.name,required this.phone,required this.id,required this.role,required this.numOfNotifications});
+   Customer({required this.email,required this.name,required this.phone,required this.id,required this.role,required this.numOfNotifications});
 }

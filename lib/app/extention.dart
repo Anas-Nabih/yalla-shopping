@@ -1,7 +1,9 @@
+import 'package:yalla_shopping/common_utils/res/constatnts.dart';
+
 extension NonNullString on String?{
   String orEmpty(){
     if(this == null){
-      return "";
+      return Const.EMPTY;
     }else{
       return this!;
     }
@@ -12,7 +14,7 @@ extension NonNullString on String?{
 extension NonNullInteger on int?{
   int orZero(){
     if(this == null){
-      return 0;
+      return Const.ZERO;
     }else{
       return this!;
     }

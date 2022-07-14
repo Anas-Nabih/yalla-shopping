@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:json_annotation/json_annotation.dart';
+ import 'package:json_annotation/json_annotation.dart';
 
 part 'base_response.g.dart';
 
@@ -38,14 +37,14 @@ class CustomerResponse {
 }
 
 @JsonSerializable()
-class LoginResponse extends BaseResponse {
+class AuthenticationResponse extends BaseResponse {
   @JsonKey(name: "customer")
   CustomerResponse? customer;
 
-  LoginResponse(this.customer);
+  AuthenticationResponse(this.customer);
 
   /// from json
-  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
+  factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
 
   /// to json
