@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:yalla_shopping/data/data_source/remote_data_source.dart';
+import 'package:yalla_shopping/data/network/error_handler.dart';
 import 'package:yalla_shopping/data/network/failure.dart';
 import 'package:yalla_shopping/data/network/network_info.dart';
 import 'package:yalla_shopping/data/requests/login_request.dart';
@@ -19,18 +20,22 @@ class RepositoryImpl implements Repository {
     if (await _networkInfo.isConnected) {
       /// it's connected to internet, it's safe to call api.
 
-      final response = await _remoteDataSource.login(loginRequest);
-      if (response.status == 0) {
-        /// success, return either right -return data-.
-        return Right(response.toDomain());
-      } else {
-        /// error, return either left -return error msg-.
-        return Left(Failure(code: response.status ?? 409, message: response.message?? "Some thing wrong happened"));
+      try{
+        final response = await _remoteDataSource.login(loginRequest);
+        if (response.status == ApiInternalStatus.SUCCESS) {
+          /// success, return either right -return data-.
+          return Right(response.toDomain());
+        } else {
+          /// error, return either left -return error msg-.
+          return Left(Failure(code: ApiInternalStatus.FAILURE, message: ResponseMessage.UNKNOWN));
+        }
+      }catch(error){
+        return Left(ErrorHandler.handle(error).failure);
       }
     } else {
       /// return internet connection error
       /// return either left -return error msg-.
-      return Left(Failure(code: 501, message: "please check your internet connection, and try again."));
+      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
     }
   }
 }
