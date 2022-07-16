@@ -1,4 +1,4 @@
-import 'package:yalla_shopping/common_utils/res/constatnts.dart';
+import 'package:yalla_shopping/common_utils/res/CONST.dart';
 
 extension NonNullString on String?{
   String orEmpty(){

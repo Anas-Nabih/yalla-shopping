@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:yalla_shopping/common_utils/res/constatnts.dart';
+import 'package:yalla_shopping/common_utils/res/CONST.dart';
 import 'package:yalla_shopping/common_utils/res/assets_manager.dart';
 import 'package:yalla_shopping/domain/models/onboarding_model.dart';
 import 'package:yalla_shopping/presentation/base/base_view_model.dart';

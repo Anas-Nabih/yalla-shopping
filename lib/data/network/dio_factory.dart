@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:yalla_shopping/common_utils/preferences/prefs.dart';
+import 'package:yalla_shopping/common_utils/res/CONST.dart';
 import 'package:yalla_shopping/data/api.dart';
 
 const String APPLICATION_JSON = "application/json";
@@ -12,22 +14,20 @@ const String LANGUAGE = "language";
 class DioFactory {
   Future<Dio> getDio() async {
     Dio dio = Dio();
-
-    /// 60 secs
-    int _timeOut = 60 * 1000;
+    String language = await Prefs.getAppLocal();
 
     Map<String, String> header = {
       CONTENT_TYPE: APPLICATION_JSON,
       ACCEPT: APPLICATION_JSON,
-      AUTHORIZATION: "put bearer token here",
-      LANGUAGE: "en" // todo: set lang from app prefs
+      AUTHORIZATION: Const.token,
+      LANGUAGE: language
     };
 
     dio.options = BaseOptions(
       baseUrl: Api.baseUrl,
       headers: header,
-      sendTimeout: _timeOut,
-      receiveTimeout: _timeOut,
+      sendTimeout: Const.apiTimeOut,
+      receiveTimeout: Const.apiTimeOut,
     );
 
     if (kDebugMode) {
