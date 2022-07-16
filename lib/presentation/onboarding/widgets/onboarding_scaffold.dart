@@ -5,7 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:yalla_shopping/common_utils/res/colors.dart';
 import 'package:yalla_shopping/domain/models/onboarding_model.dart';
  import 'package:yalla_shopping/presentation/onboarding/view_model/onboarding_view_model.dart';
-import 'package:yalla_shopping/presentation/user/login/login_view.dart';
+import 'package:yalla_shopping/presentation/user/login/view/login_view.dart';
 
 class OnBoardingScaffold extends StatefulWidget {
   final SliderViewObject? sliderViewObject;
