@@ -1,5 +1,4 @@
- import 'package:json_annotation/json_annotation.dart';
-
+import 'package:json_annotation/json_annotation.dart';
 part 'base_response.g.dart';
 
 @JsonSerializable()
@@ -45,8 +44,8 @@ class AuthenticationResponse extends BaseResponse {
 
   /// from json
   factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
-      _$LoginResponseFromJson(json);
+      _$AuthenticationResponseFromJson(json);
 
   /// to json
-  Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
+  Map<String, dynamic> toJson() => _$AuthenticationResponseToJson(this);
 }

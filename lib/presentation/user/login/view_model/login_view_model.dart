@@ -1,13 +1,27 @@
+import 'dart:async';
+import 'package:yalla_shopping/domain/use_cases/login_use_case.dart';
 import 'package:yalla_shopping/presentation/base/base_view_model.dart';
+import 'package:yalla_shopping/presentation/comman/freezed_data_classes.dart';
 
 class LoginViewModel extends BaseViewModel
     with LoginViewModelInputs, LoginViewModelOutputs {
 
-  /// inputs
+  LoginViewModel(this._loginUseCase);
 
+  final StreamController _emailStreamController =
+  StreamController<String>.broadcast();
+  final StreamController _passwordStreamController =
+  StreamController<String>.broadcast();
+
+
+  var loginObject = LoginObject("", "");
+  final LoginUseCase _loginUseCase;
+
+  /// inputs
   @override
   void dispose() {
-    // TODO: implement dispose
+    _emailStreamController.close();
+    _passwordStreamController.close();
   }
 
   @override
@@ -16,55 +30,77 @@ class LoginViewModel extends BaseViewModel
   }
 
   @override
-  // TODO: implement inputPassword
-  Sink get inputPassword => throw UnimplementedError();
+  Sink get inputPassword => _passwordStreamController.sink;
 
   @override
-  // TODO: implement inputUserName
-  Sink get inputUserName => throw UnimplementedError();
+  Sink get inputEmail => _emailStreamController.sink;
 
   @override
   setPassword(String password) {
-    // TODO: implement setPassword
-    throw UnimplementedError();
+    inputPassword.add(password);
+    loginObject = loginObject.copyWith(password: password);
   }
 
   @override
-  setUserName(String userName) {
-    // TODO: implement setUserName
-    throw UnimplementedError();
+  setEmail(String email) {
+    inputEmail.add(email);
+    loginObject = loginObject.copyWith(email: email);
   }
 
   @override
-  login() {
-    // TODO: implement login
-    throw UnimplementedError();
+  login() async {
+    (await _loginUseCase.execute(LoginUseCaseInput(
+        email: loginObject.email, password: loginObject.password))).fold((
+        failure) => {
+          /// failure
+    }, (data) => {
+          /// success (data)
+     });
   }
 
   /// outPuts
   @override
   // TODO: implement outIsPassword
-  Stream<bool> get outIsPasswordValid => throw UnimplementedError();
+  Stream<bool> get outIsPasswordValid =>
+      _passwordStreamController.stream
+          .map((password) => _isPasswordValid(password));
 
   @override
   // TODO: implement outIsUserNameValid
-  Stream<bool> get outIsUserNameValid => throw UnimplementedError();
+  Stream<bool> get outIsEmailValid =>
+      _emailStreamController.stream.map((email) => _isEmailISValid(email));
+
+  bool _isPasswordValid(String password) {
+    if (password.isEmpty || password.length < 6) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  bool _isEmailISValid(String email) {
+    if (email.isEmpty) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 
 abstract class LoginViewModelInputs {
-  setUserName(String userName);
+  setEmail(String email);
 
   setPassword(String password);
 
   login();
 
-  Sink get inputUserName;
+  Sink get inputEmail;
 
   Sink get inputPassword;
 }
 
 abstract class LoginViewModelOutputs {
-  Stream<bool> get outIsUserNameValid;
+  Stream<bool> get outIsEmailValid;
 
   Stream<bool> get outIsPasswordValid;
 }
