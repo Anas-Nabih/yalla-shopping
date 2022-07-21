@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class MColors{
+class MColors {
+  static const pageBackground = Color(0xffF6F6F6);
   static const Color primary = Color(0xffED9728);
   static const Color lightPrimary = Color(0xccED9728);
   static const Color darkGray = Color(0xff525252);
@@ -9,6 +10,6 @@ class MColors{
   static const Color grey = Color(0xff707070);
   static const Color grey1 = Color(0xff737477);
   static const Color grey2 = Color(0xff797979);
-  static const Color white  = Color(0xffFFFFFF);
+  static const Color white = Color(0xffFFFFFF);
   static const Color error = Color(0xffe61f34);
 }
