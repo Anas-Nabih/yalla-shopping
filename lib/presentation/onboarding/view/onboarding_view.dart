@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:yalla_shopping/common_utils/res/CONST.dart';
-import 'package:yalla_shopping/common_utils/res/assets_manager.dart';
 import 'package:yalla_shopping/domain/models/onboarding_model.dart';
 import 'package:yalla_shopping/presentation/onboarding/view_model/onboarding_view_model.dart';
 import 'package:yalla_shopping/presentation/onboarding/widgets/onboarding_scaffold.dart';
@@ -17,8 +15,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   final OnBoardingViewModel _viewModel = OnBoardingViewModel();
 
   _bind() => _viewModel.start();
-
-
 
   @override
   void initState() {
@@ -49,6 +45,4 @@ class OnBoarding {
 
   OnBoarding(
       {required this.title, required this.subTitle, required this.image});
-
-
 }

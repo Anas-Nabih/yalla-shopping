@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yalla_shopping/common_utils/res/colors.dart';
 import 'package:yalla_shopping/common_utils/res/fonts.dart';
 import 'package:yalla_shopping/common_utils/res/styles_manager.dart';
-import 'package:yalla_shopping/common_utils/res/values_manager.dart';
+import 'package:yalla_shopping/common_utils/res/dimens.dart';
 
 ThemeData appTheme() {
   return ThemeData(
@@ -59,25 +59,25 @@ ThemeData appTheme() {
 
     /// inputDecoration theme
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(Gaps.m8),
+      contentPadding: const EdgeInsets.all(Dimens.d8),
       hintStyle: getRegularStyle(color: MColors.grey,fontSize: FontsSize.s14),
       labelStyle: getMediumStyle(color: MColors.grey,fontSize: FontsSize.s14),
       errorStyle: getRegularStyle(color: MColors.error),
       enabledBorder:  OutlineInputBorder(
         borderSide: const BorderSide(color: MColors.primary,width: FontsSize.s1_5),
-        borderRadius: BorderRadius.circular(Gaps.m8)
+        borderRadius: BorderRadius.circular(Dimens.d8)
       ),
       focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.grey,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(Gaps.m8)
+          borderRadius: BorderRadius.circular(Dimens.d8)
       ),
       errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.error,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(Gaps.m8)
+          borderRadius: BorderRadius.circular(Dimens.d8)
       ),
       focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: MColors.primary,width: FontsSize.s1_5),
-          borderRadius: BorderRadius.circular(Gaps.m8)
+          borderRadius: BorderRadius.circular(Dimens.d8)
       ),
   )
   );

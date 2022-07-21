@@ -18,6 +18,15 @@ class Const {
   static const String onBoarding4Description = " 4 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
 
 
+  /// login
+  static const String email = "email";
+  static const String password = "password";
+  static const String emailError = "please enter your user name";
+  static const String passwordError = "please enter your password";
+  static const String login = "please enter your password";
+  static const String forgetPassword = "Forget password?";
+  static const String registerNewAccount = "you don't have account? Create account.";
+
   /// prefs keys
   static const String IS_LOGIN = "IS_LOGIN";
   static const String APP_LOCAL = "APP_LOCAL";
